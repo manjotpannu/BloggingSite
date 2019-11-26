@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<br> <br>
+<div class="container">
+  <div  align="right">
+    <span><button class="btn btn-lg text-light" style="background: #8C2870;" (click)="Allf()">All followers</button></span>
+    <span><button class="btn btn-lg text-light" style="background: #8C2870;" (click)="Details()">Personal Details</button></span>
+  </div>
+  <div align="center">
+    <h1 style="color:#8c2870;font-size: xx-large"> Profile</h1><br>
+    <div style="width:40%;height:60%">
+      <img src="../assets/images1/15.jpeg" class="rounded-circle" style="width:60%; height: 80%">
+
+
+    </div>
+<br>
+    <div >
+      <div *ngIf="!this.Obj.check()">
+      <div align="center">
+        <div style=" position: relative">
+          <h1 class="text-secondary">Personal Details</h1>
+        </div>
+        <br><br>
+        <h2 > Name  :  <input class="text-center" style="width: 40%;background: #facced;padding: 5px;margin: 5px 0 5px 0;display: inline-block;border: none;" type="text" value="{{MyProd.name}}" size="45" [disabled]="disabled" [(ngModel)]="MyProd.name"></h2><br>
+
+        <h2>Contact: <input class="text-center" style="width: 40%;background: #facced;padding: 5px;margin: 5px 0 5px 0;display: inline-block;border: none;" type="text" value="{{MyProd.contact}}" size="45" [disabled]="disabled" [(ngModel)]="MyProd.contact"></h2><br>
+
+        <h2 >Address: <input class="text-center" style="width: 40%;background: #facced;padding: 5px;margin: 5px 0 5px 0;display: inline-block;border: none;" type="text" value="{{MyProd.address}}" size="45" [disabled]="disabled" [(ngModel)]="MyProd.address"> </h2><br>
+        <!--<h2><input class="text-center bg-secondary" type="text" value="{{MyProd.address}}" size="45" [disabled]="disabled" [(ngModel)]="MyProd.address"></h2>
+-->
+        <div align="center" >
+          <div style="width:50%">
+          <button style="width:50%" class="btn btn-md btn-outline-dark" (click)="save()">Save</button>
+          <button style="width:50%" class="btn btn-md btn-outline-dark" (click)="edit()">Edit</button>
+          </div>
+        </div>
+        <br>
+      </div>
+      </div>
+    </div>
+    <div *ngIf="this.Obj.check()">
+      <table class="table " style="width:80%;font-size: medium">
+        <thead>
+        <tr class="text-secondary">
+          <th>Email</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let s of arr">
+          <td>{{s.users1.email}}</td>
+          <td>{{s.users1.name}}</td>
+          <td>
+            <button (click)="unfollow(s.users1.usrid)" class="btn btn-lg text-light " style="background: #8C2870" >Unfollow</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><br>
+<div align="center">
+  <button class="btn btn-lg btn-outline-dark text-light" style="padding:10px;background: #8c2870" (click)="add2()">Add Blog</button>
+</div>
+<br><br>
+<nav class="navbar navbar-expand-sm  justify-content-center" style="background: #8C2870">
+  <ul class="navbar-nav myclass">
+    <li *ngFor="let d of MYVAR" class="nav-item">
+      <button  (click)="show(d.category)" class=" btn btn-lg text-light" style="background: #8C2870"><b>{{d.category}}</b></button>
+    </li>
+  </ul>
+</nav>
+<br>
+<div align="center" class="container">
+  <div  *ngFor="let s of MYVAR" class="" style="background-color:rgba(255, 204, 224,0.3); padding: 10px; margin: 10px;">
+    <div class="">
+      <h2><a href="/blogdetails/{{s.id}}" class="card-title text-secondary">Title: {{s.about}}</a></h2>
+      <p class="card-text">Category: {{s.category}}</p>
+      <button (click)="edit1(s.id)" class="btn btn-lg text-light" style="background: #8C2870">Edit Blog</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!--<div align="center">
+  <h3 class="text-dark">Add some of your blogs By clicking on the button</h3>
+  <button class="btn btn-lg btn-success btn-outline-dark" (click)="add2()">Add Blogs</button>
+</div>
+<br>-->
+<!--
+<div class="container">
+<div *ngFor="let s of MYVAR" style="background-color:rgba(255, 204, 224,0.3)">
+  <div align="right">
+  <button class="bg-danger btn" (click)="remove(s.id)">X</button>
+  </div>
+  <a align="center" style="font-family: cursive; margin-bottom: 10px" href="/blogdetails/{{s.id}}" >{{s.about}}</a>
+  <h2 align="center" class="text-secondary" style="margin-bottom: 5px">{{s.category}}</h2>
+  <div align="center">
+  <button class="btn btn-md btn-outline-dark btn-success text-white " (click)="edit1(s.id)">edit</button>
+  </div>
+  <hr>
+</div>
+</div>
+<hr>
+<nav class="navbar navbar-expand-sm bg-primary justify-content-center">
+  <ul class="navbar-nav myclass">
+    <li *ngFor="let s of MYVAR" class="nav-item">
+      <button (click)="show(s.category)" class="btn-primary btn" ><b>{{s.category}}</b></button>
+    </li>
+  </ul>
+</nav>
+-->

@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<!--
+<div *ngFor="let s of show">
+  <div *ngIf="this.App.checkPublic()">{{s.about}}</div>
+</div>
+-->
+
+<div align="center">
+  <h1 style="font-size: xx-large;color: #8c2870">Blogs Feed</h1>
+
+</div>
+<br>
+<div class="container">
+  <div *ngFor="let s of Myvar" style="background-color:rgba(255, 204, 224,0.3); padding: 10px; margin: 10px;">
+    <!--<div align="right">
+      <button class=" bg-dark btn text-light"  (click)="remove(s.id)">Delete</button>
+    </div >-->
+    <h2 align="center"><a align="center"  style="color:#8c2870" href="/blogdetails/{{s.id}}" >Title: {{s.about}}</a></h2>
+    <div align="center" class="text-secondary" style="font-size: medium">Category: {{s.category}}</div><br>
+    <div align="center">
+      <a href="/blogdetails/{{s.id}}"><button class="btn btn-md btn-outline-dark btn-dark text-white " >View</button>
+      </a></div>
+  </div>
+</div><br>
+<div align="center">
+  <button class="btn btn-lg btn-outline-dark text-light" style="padding:10px;background: #8c2870" (click)="add2()">Add Blog</button>
+</div>
+<!-- <br><hr><br>
+<h2 align="center" style="color:#8c2870">Categories</h2><br>
+<nav class="navbar navbar-expand-sm  justify-content-center" style="background: #8c2870">
+ <ul class="navbar-nav myclass">
+   <li *ngFor="let s of Myvar" class="nav-item">
+     <button (click)="show(s.category)" class="text-light btn" style="font-size: medium" ><b>{{s.category}}</b></button>
+   </li>
+ </ul>
+</nav>-->

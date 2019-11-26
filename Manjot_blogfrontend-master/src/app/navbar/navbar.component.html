@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+<a class="navbar-brand" href="#">
+    <img src="../assets/images1/3.png" alt="logo" style="width:100px;height:100%">
+  </a>
+
+  <ul class="navbar-nav">
+    <li>
+    <a  class=" nav-link" style="font-size: medium" href="/home">Home  </a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <!--<form class="form-inline">
+        <input class="form-control mr-sm-2" type="text"  placeholder="Search" name="search"  >
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>-->
+    </li>
+<!--    <li *ngIf="this.authService.checkuserlogin()" class="nav-item">-->
+<!--      <button class="nav-link bg-dark btn" (click)="dark()">Dark Mode</button>-->
+<!--    </li>-->
+<!--    <li *ngIf="this.authService.checkuserlogin()" class="nav-item">-->
+<!--      <button class="nav-link bg-dark btn" (click)="light()">Light Mode</button>-->
+<!--    </li>-->
+
+    <li class="nav-item">
+      <button *ngIf ="this.service.checkLogin()"  class="btn btn-lg btn-dark nav-link btn-outline-secondary" style="font-size: medium" (click)="profile()">MyProfile   </button>
+    </li>
+
+    <li class="nav-item">
+      <button *ngIf="this.service.checkLogin()" class="btn nav-link btn-dark btn-lg btn-outline-secondary" style="font-size: medium" (click)="logout()" >LogOut</button>
+      <button *ngIf="!this.service.checkLogin()" class="btn nav-link btn-dark btn-lg btn-outline-secondary" style="font-size: medium" (click)="login()" >LogIn</button>
+
+    </li>
+
+  </ul>
+
+</nav>

@@ -1,0 +1,47 @@
+body {
+  background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
+  color: #000;
+  font: 14px Arial;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #facced;
+}
+h1{ font-size:28px;}
+h2{ font-size:26px;}
+h3{ font-size:18px;}
+h4{ font-size:16px;}
+h5{ font-size:14px;}
+h6{ font-size:12px;}
+h1,h2,h3,h4,h5,h6{ color:#563D64;}
+small{ font-size:10px;}
+b, strong{ font-weight:bold;}
+a{ text-decoration: none; }
+a:hover{ text-decoration: underline; }
+.left { float:left; }
+.right { float:right; }
+.alignleft { float: left; margin-right: 15px; }
+.alignright { float: right; margin-left: 15px; }
+
+.clearfix:after,
+form:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.width-33{
+  width:33.33%;
+  margin:4px;
+  padding:50px;
+
+  height: min-content;
+}

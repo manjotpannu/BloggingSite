@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<br><br>
+<div class="container">
+<h1 align="center" style="font-size: xx-large;color:#8c2870">BloggersNest</h1>
+<br>
+  <div class="container">
+  <h5 style="font-size: x-large"><u>Title:</u> {{MYProd.about}}</h5>
+<br><br>
+<h6 style="font-size: large"><u>Content:</u></h6>
+<h6 style="font-size: medium;padding-left: 20px" >{{MYProd.content}}</h6>
+  </div>
+</div><br><br>
+<div align="center">
+  <button class="btn btn-lg text-light" style="background: #8C2870;" *ngIf="user.usrid !== MYProd.users.usrid" (click)="follow(MYProd.users.usrid)">Follow</button>
+</div>
